@@ -1,6 +1,18 @@
-# Open Source Contribution
+## Open Source Contribution
 
 * **Resolved Issue:** [dgunning/edgartools #885](https://github.com/dgunning/edgartools/issues/885) - Multi-Duration 10-Q Period Indexing Bug
+
+### Tech Stack
+
+![Java](https://img.shields.io/badge/Java-007396?style=flat-square&logo=openjdk&logoColor=white)
+![Spring Boot](https://img.shields.io/badge/Spring_Boot-6DB33F?style=flat-square&logo=spring-boot&logoColor=white)
+![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white)
+![FastAPI](https://img.shields.io/badge/FastAPI-009688?style=flat-square&logo=fastapi&logoColor=white)
+![RDBMS](https://img.shields.io/badge/RDBMS-4479A1?style=flat-square&logo=relational-databases&logoColor=white)
+![Redis](https://img.shields.io/badge/Redis-DC382D?style=flat-square&logo=redis&logoColor=white)
+![JUnit5](https://img.shields.io/badge/JUnit5-25A162?style=flat-square&logo=junit5&logoColor=white)
+![Pytest](https://img.shields.io/badge/Pytest-0A9EDC?style=flat-square&logo=pytest&logoColor=white)
+![Docker](https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=docker&logoColor=white)
 
 <!--
 **QAAAQ123/QAAAQ123** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
