@@ -1,4 +1,6 @@
-## Hi there 👋
+# Open Source Contribution
+
+* **Resolved Issue:** [dgunning/edgartools #885](https://github.com/dgunning/edgartools/issues/885) - Multi-Duration 10-Q Period Indexing Bug
 
 <!--
 **QAAAQ123/QAAAQ123** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
