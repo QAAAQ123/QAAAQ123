@@ -1,6 +1,6 @@
 ## Open Source Contribution
 
-* **Resolved Issue:** [dgunning/edgartools #885](https://github.com/dgunning/edgartools/issues/885) - Multi-Duration 10-Q Period Indexing Bug
+* **Issue Report & Root-Cause Analysis:** [dgunning/edgartools #885](https://github.com/dgunning/edgartools/issues/885) - Diagnosed a silent financial-data correctness bug caused by incorrect period-column selection in multi-duration 10-Q filings.
 
 ### Tech Stack
 
