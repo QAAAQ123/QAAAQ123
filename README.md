@@ -76,6 +76,13 @@ NASDAQ: AAPL 10-Q에서 `get_operating_cash_flow()`가 운영 현금 흐름을 `
 
 <br>
 
+## 📚 학습 및 인증
+
+[![Kaggle - Intro to SQL](https://img.shields.io/badge/Kaggle-Intro%20to%20SQL-20BEFF?style=for-the-badge&logo=kaggle&logoColor=white)](https://www.kaggle.com/learn/certification/qaaaq123/intro-to-sql)
+[![Kaggle - Advanced SQL](https://img.shields.io/badge/Kaggle-Advanced%20SQL-20BEFF?style=for-the-badge&logo=kaggle&logoColor=white)](https://www.kaggle.com/learn/certification/qaaaq123/advanced-sql)
+
+<br>
+
 ## 📧 연락처
 
 - **이메일**: kjw987a@gmail.com
