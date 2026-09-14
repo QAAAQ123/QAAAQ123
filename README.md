@@ -18,7 +18,8 @@
 ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-4169E1?style=for-the-badge&logo=postgresql&logoColor=white) ![SQL](https://img.shields.io/badge/SQL-336791?style=for-the-badge&logo=sqlite&logoColor=white) ![Redis](https://img.shields.io/badge/Redis-DC382D?style=for-the-badge&logo=redis&logoColor=white)
 
 #### Testing
-![Pytest](https://img.shields.io/badge/Pytest-0A9EDC?style=for-the-badge&logo=pytest&logoColor=white) ![JUnit5](https://img.shields.io/badge/JUnit5-25A162?style=for-the-badge&logo=junit5&logoColor=white)
+![Pytest](https://img.shields.io/badge/Pytest-0A9EDC?style=for-the-badge&logo=pytest&logoColor=white) 
+<!-- ![JUnit5](https://img.shields.io/badge/JUnit5-25A162?style=for-the-badge&logo=junit5&logoColor=white) -->
 
 #### DevOps & Cloud
 ![Docker](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white)  ![AWS](https://img.shields.io/badge/AWS-FF9900?style=for-the-badge&logo=amazon-aws&logoColor=white)
@@ -26,22 +27,28 @@
 <br>
 ## 💼 오픈소스 기여
 
-### 1. 데이터 정확성 버그 분석 및 리포트
+### 1. 매출 데이터 정확성 버그 분석 및 수정 기여
 
 edgartools — [`#885`](https://github.com/dgunning/edgartools/issues/885)
 
-NYSE:IONQ의 `get_revenue()`가 최신 분기 매출 대신 **전년 동기 값을 반환**하는 사일런트 에러(Silent Data Corruption)를 발견하고 재현·분석하여 제보
+NYSE:IONQ의 10-Q 필링에서 `get_revenue()`가 최신 분기 매출 대신 **전년 동기 값을 반환**하는 사일런트 에러(Silent Data Corruption)를 발견하고 재현·분석하여 제보
 
 핵심 분석
 
-* 기간 메타데이터가 아닌 **열 위치에 의존한 데이터 선택 로직**의 구조적 문제 식별
-* 10-Q의 현재 기간·전년 비교 기간 및 분기/YTD 데이터가 혼재하는 상황에서 기간 인식 없는 위치 기반 접근의 위험성 분석
-* 실제 재현 사례와 원인 코드를 추적해 문제를 구체화
+* `get_revenue()`가 기간 메타데이터가 아닌 **열 위치(index)만으로 "최신 기간"을 판단**하는 구조적 문제 식별
+* 10-Q의 당기·전기 비교 기간, 3개월/6·9개월(YTD) 데이터가 혼재하는 상황에서 컬럼 순서가 최신순으로 정렬되어 있지 않아 발생하는 문제임을 실제 재현 사례로 구체화 (IonQ FY2025 Q2·Q3 10-Q)
+* 기간 종료일·duration 기반으로 컬럼을 선택하도록 수정 방향 제안
 
-의의
+메인테이너 대응
 
-* 재무 데이터 파이프라인에서 데이터 정확성과 검증의 중요성을 확인
-* 단순 값 조회가 아닌 회계 기간과 데이터 의미를 기준으로 한 개념 기반 처리의 필요성 제시
+* 컬럼을 위치가 아닌 **메타데이터(종료일 + duration) 기준으로 정렬**하도록 수정, `get_net_income()`·`get_operating_income()`에도 동일 적용
+* label 기반 fallback의 동일한 결함도 함께 수정
+
+결과
+
+* **수정 커밋** [`058648b`](https://github.com/dgunning/edgartools/commit/058648b8a01c510bff318b9be326debc089c17fc)로 `main`에 반영
+* IonQ FY2025 Q2 `get_revenue()` → **20,694,000**(정상화), FY2025 Q3 → **39,866,000**으로 정상 추출 확인
+* 수정 사항이 **v5.41.0 릴리스** [`24f2e43`](https://github.com/dgunning/edgartools/commit/24f2e43913a09007874f921aa6a12020e5b1d964)에 포함되어 PyPI 배포
 
 ### 2. 운영 현금 흐름 추출 버그 분석 및 수정 기여
 
