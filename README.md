@@ -42,7 +42,7 @@
 
 ### 1. 매출 데이터 정확성 버그 분석 및 수정 기여
 
-edgartools — [`#885`](https://github.com/dgunning/edgartools/issues/885)
+edgartools — [`issue #885`](https://github.com/dgunning/edgartools/issues/885)
 
 NYSE:IONQ의 10-Q 필링에서 `get_revenue()`가 최신 분기 매출 대신 **전년 동기 값을 반환**하는 사일런트 에러(Silent Data Corruption)를 발견하고 재현·분석하여 제보
 
@@ -57,7 +57,7 @@ get_revenue()가 기간 메타데이터가 아닌 열 위치(index)만으로 최
 
 ### 2. 운영 현금 흐름 추출 버그 분석 및 수정 기여
 
-edgartools — [`#1083`](https://github.com/dgunning/edgartools/issues/1083)
+edgartools — [`issue #1083`](https://github.com/dgunning/edgartools/issues/1083)
 
 NASDAQ: AAPL 10-Q에서 `get_operating_cash_flow()`가 운영 현금 흐름을 `None`으로 반환하는 문제를 발견하고, 재현 코드와 예상값을 포함해 원인을 분석·제보
 
