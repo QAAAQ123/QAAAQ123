@@ -4,7 +4,6 @@
 
 **데이터 처리와 ETL 파이프라인 설계**, 특히 금융 데이터의 정확성과 신뢰성을 높이는 데이터 처리에 관심이 있습니다.
 
-<br>
 
 ## 💼 오픈소스 기여
 
@@ -28,7 +27,7 @@ Apple의 10-Q 공시에서 `get_operating_cash_flow()`가 운영 현금 흐름�
 - **분석:** XBRL 표준 개념은 존재하지만 함수가 해당 개념을 우선 조회하지 않는 문제를 확인
 - **결과:** 메인테이너가 XBRL Concept 우선 조회와 label 기반 fallback을 적용한 [PR #1089](https://github.com/dgunning/edgartools/pull/1089)을 병합. 운영 현금 흐름 $82.627B와 이에 의존하는 잉여현금흐름 $78.283B가 정상 추출되도록 수정되어 `v5.52.0`에 반영
 
-<br>
+
 
 ## 🚀 주요 프로젝트
 
@@ -48,7 +47,7 @@ SEC 공시 수집과 재무 데이터 처리를 통해 투자 분석에 필요�
 - **재무 데이터 처리:** 손익계산서·현금흐름표 데이터 추출 및 FCFE 기반 DCF 분석을 위한 데이터 처리 기반 구축
 - **백엔드 및 테스트:** FastAPI, PostgreSQL, SQLAlchemy, Alembic 기반 백엔드 구조 설계와 pytest 단위·통합 테스트 구성
 
-<br>
+
 
 ## 🔧 주요 기술 스택
 
@@ -80,7 +79,7 @@ SEC 공시 수집과 재무 데이터 처리를 통해 투자 분석에 필요�
 
 ![FastAPI](https://img.shields.io/badge/FastAPI-009688?style=for-the-badge&logo=fastapi&logoColor=white) ![Spring Boot](https://img.shields.io/badge/Spring_Boot-6DB33F?style=for-the-badge&logo=spring-boot&logoColor=white)
 
-<br>
+
 
 ## 📚 학습 및 인증
 
