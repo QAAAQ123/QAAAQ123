@@ -31,22 +31,13 @@ Apple의 10-Q 공시에서 `get_operating_cash_flow()`가 운영 현금 흐름�
 
 ## 🚀 주요 프로젝트
 
-### 1. [sec-finnorm](https://github.com/QAAAQ123/sec-finnorm) — SEC 재무제표 정규화 라이브러리
-
-SEC 공시 데이터를 기반으로 기업별 재무제표를 일관된 형태로 정규화하기 위한 Python 라이브러리입니다.
-
-- **목표:** 기업과 공시마다 다른 재무 데이터의 기간 표현을 일관되게 정규화
-- **주요 기능 목표:** 분기·누적·연간·TTM 기간 처리, 현금흐름표의 누적 데이터 정규화, 정정 공시 관리
-- **기술 스택:** Python, edgartools, pytest
-
-### 2. [AlphaDelta](https://github.com/QAAAQ123/AlphaDelta) — SEC 공시 기반 금융 데이터 분석
+### 1. [AlphaDelta](https://github.com/QAAAQ123/AlphaDelta) — SEC 공시 기반 금융 데이터 분석
 
 SEC 공시 수집과 재무 데이터 처리를 통해 투자 분석에 필요한 데이터를 제공하기 위한 백엔드 프로토타입입니다.
 
 - **데이터 수집:** `edgartools`를 활용한 SEC 기업 정보 및 과거 10-K·10-Q 공시 수집·저장
 - **재무 데이터 처리:** 손익계산서·현금흐름표 데이터 추출 및 FCFE 기반 DCF 분석을 위한 데이터 처리 기반 구축
 - **백엔드 및 테스트:** FastAPI, PostgreSQL, SQLAlchemy, Alembic 기반 백엔드 구조 설계와 pytest 단위·통합 테스트 구성
-
 
 
 ## 🔧 주요 기술 스택
