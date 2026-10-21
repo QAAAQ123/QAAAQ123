@@ -31,7 +31,15 @@ Apple의 10-Q 공시에서 `get_operating_cash_flow()`가 운영 현금 흐름�
 
 ## 🚀 주요 프로젝트
 
-### 1. [AlphaDelta](https://github.com/QAAAQ123/AlphaDelta) — SEC 공시 기반 금융 데이터 분석
+### 1. [us-treasury-10y-2y-and-10y-3m-yield-spread-pipeline](https://github.com/QAAAQ123/us-treasury-10y-2y-and-10y-3m-yield-spread-pipeline) — 미국 국채 일드 스프레드 데이터 파이프라인
+
+미국 국채 금리 데이터를 수집·가공하고, T10Y2Y 및 T10Y3M 일드 스프레드의 시계열 분석과 시각화를 위한 데이터 파이프라인입니다.
+
+- **데이터 수집:** 미국 국채 금리 데이터 API를 활용한 시계열 데이터 수집 및 저장
+- **데이터 처리:** T10Y2Y 및 T10Y3M 일드 스프레드 계산과 시계열 데이터 정제
+- **시각화 및 자동화:** Plotly 기반 인터랙티브 시계열 시각화와 GitHub Actions를 활용한 파이프라인 정기 실행 및 자동화
+
+### 2. [AlphaDelta](https://github.com/QAAAQ123/AlphaDelta) — SEC 공시 기반 금융 데이터 분석
 
 SEC 공시 수집과 재무 데이터 처리를 통해 투자 분석에 필요한 데이터를 제공하기 위한 백엔드 프로토타입입니다.
 
