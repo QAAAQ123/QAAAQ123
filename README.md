@@ -84,7 +84,3 @@ SEC 공시 수집과 재무 데이터 처리를 통해 투자 분석에 필요�
 
 [![Kaggle - Intro to SQL](https://img.shields.io/badge/Kaggle-Intro%20to%20SQL-20BEFF?style=for-the-badge&logo=kaggle&logoColor=white)](https://www.kaggle.com/learn/certification/qaaaq123/intro-to-sql)
 [![Kaggle - Advanced SQL](https://img.shields.io/badge/Kaggle-Advanced%20SQL-20BEFF?style=for-the-badge&logo=kaggle&logoColor=white)](https://www.kaggle.com/learn/certification/qaaaq123/advanced-sql)
-
-<br>
-
-데이터 엔지니어링과 금융 데이터 처리, 오픈소스 기여에 관심 있는 분들과의 협력을 환영합니다!
