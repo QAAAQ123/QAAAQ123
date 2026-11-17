@@ -1,23 +1,46 @@
-## 안녕하세요 👋
+## 신입 데이터 엔지니어
 
-데이터 과학과 데이터 엔지니어링에 관심 있는 개발자입니다.
-
-**데이터 처리와 ETL 파이프라인 설계**, 특히 금융 데이터의 정확성과 신뢰성을 높이는 데이터 처리에 관심이 있습니다.
+금융 데이터를 수집·정제·적재하는 파이프라인을 만들고, 데이터가 정확한지 검증하는 데 집중합니다.
 
 
-## 💼 오픈소스 기여
+## 주요 프로젝트
 
-### 1. 매출 데이터 기간 선택 오류 분석 및 제보
+### [us-treasury-yield-timeseries-pipeline](https://github.com/QAAAQ123/us-treasury-yield-timeseries-pipeline) · [Live](https://qaaaq123.github.io/us-treasury-yield-timeseries-pipeline/)
+
+미국 국채 수익률을 매일 수집해 일드·스프레드(T10Y2Y·T10Y3M) 시계열을 적재하고 자동 배포하는 배치 파이프라인
+
+- 초기 적재 / 증분 수집 분리, `date` 기본 키 기반 CSV 마트 적재
+- 휴장일 결측·날짜 중복·변환 실패 등 데이터 처리 정책 문서화 및 구현
+- GitHub Actions 일일 수집 → 변경 시에만 커밋 → GitHub Pages 재배포
+- 단위·통합·E2E 테스트
+
+`Python` `pandas` `Plotly` `pytest` `GitHub Actions`
+
+### [AlphaDelta](https://github.com/QAAAQ123/AlphaDelta)
+
+SEC 공시를 수집해 PostgreSQL에 적재하고, 재무제표를 DCF 분석용 데이터로 가공
+
+- `edgartools` 기반 기업 정보 동기화 및 10-K·10-Q 공시 수집
+- 누적(YTD) 재무 값을 분기(QTD) 기준으로 변환
+- SQLAlchemy 스키마 설계, Alembic 마이그레이션 관리
+- 실제 공시 응답 기반 통합 테스트로 추출 정확성 검증
+
+`Python` `PostgreSQL` `SQLAlchemy` `Alembic` `FastAPI` `Docker`
+
+
+## 오픈소스 기여 — 금융 데이터 정확성 이슈 분석
+
+### 매출 데이터 기간 선택 오류 분석 및 제보
 
 edgartools — [Issue #885](https://github.com/dgunning/edgartools/issues/885)
 
 IONQ의 10-Q 공시에서 `get_revenue()`가 최신 분기 매출 대신 전년 동기 매출을 반환하는 데이터 정확성 문제를 발견하고 원인을 분석했습니다.
 
 - **원인:** 컬럼의 위치(index)만으로 기간을 선택해 공시별 컬럼 순서가 다를 때 잘못된 값을 반환
-- **분석 및 제안:** 공시 기간의 종료일과 duration 메타데이터를 기준으로 기간을 선택하는 방식 제안
-- **결과:** 메인테이너가 관련 조회 함수와 fallback 로직을 수정했으며, [`058648b`](https://github.com/dgunning/edgartools/commit/058648b8a01c510bff318b9be326debc089c17fc)에서 수정하여 `v5.41.0`에 반영
+- **제안:** 공시 기간의 종료일과 duration 메타데이터를 기준으로 기간을 선택하는 방식 제안
+- **결과:** 메인테이너가 관련 조회 함수와 fallback 로직을 [`058648b`](https://github.com/dgunning/edgartools/commit/058648b8a01c510bff318b9be326debc089c17fc)에서 수정하여 `v5.41.0`에 반영
 
-### 2. 운영 현금 흐름 추출 오류 분석 및 제보
+### 운영 현금 흐름 추출 오류 분석 및 제보
 
 edgartools — [Issue #1083](https://github.com/dgunning/edgartools/issues/1083)
 
@@ -28,59 +51,17 @@ Apple의 10-Q 공시에서 `get_operating_cash_flow()`가 운영 현금 흐름�
 - **결과:** 메인테이너가 XBRL Concept 우선 조회와 label 기반 fallback을 적용한 [PR #1089](https://github.com/dgunning/edgartools/pull/1089)을 병합. 운영 현금 흐름 $82.627B와 이에 의존하는 잉여현금흐름 $78.283B가 정상 추출되도록 수정되어 `v5.52.0`에 반영
 
 
+## 기술 스택
 
-## 🚀 주요 프로젝트
-
-### 1. [us-treasury-yield-timeseries-pipeline](https://github.com/QAAAQ123/us-treasury-yield-timeseries-pipeline) — 미국 국채 수익률 시계열 데이터 파이프라인
-
-미국 국채의 만기별 수익률 시계열을 수집·정제하고, 일드 및 T10Y2Y·T10Y3M 일드 스프레드를 계산·분석하고 시각화하는 데이터 파이프라인입니다.
-
-- **데이터 수집:** 미국 국채 만기별 수익률 데이터 API를 활용한 시계열 데이터 수집 및 저장
-- **데이터 처리:** 만기별 수익률 시계열 정제 및 T10Y2Y·T10Y3M 일드 스프레드 계산과 검증
-- **시각화 및 자동화:** Plotly 기반 만기별 수익률 및 일드 스프레드 시계열 시각화, GitHub Actions를 활용한 파이프라인 정기 실행 및 자동화
-
-### 2. [AlphaDelta](https://github.com/QAAAQ123/AlphaDelta) — SEC 공시 기반 금융 데이터 분석
-
-SEC 공시 수집과 재무 데이터 처리를 통해 투자 분석에 필요한 데이터를 제공하기 위한 백엔드 프로토타입입니다.
-
-- **데이터 수집:** `edgartools`를 활용한 SEC 기업 정보 및 과거 10-K·10-Q 공시 수집·저장
-- **재무 데이터 처리:** 손익계산서·현금흐름표 데이터 추출 및 FCFE 기반 DCF 분석을 위한 데이터 처리 기반 구축
-- **백엔드 및 테스트:** FastAPI, PostgreSQL, SQLAlchemy, Alembic 기반 백엔드 구조 설계와 pytest 단위·통합 테스트 구성
+| 분야 | 기술 |
+|---|---|
+| Data Engineering | Python, SQL, pandas, PostgreSQL, GitHub Actions, Docker, pytest |
+| Cloud | AWS (EC2, S3, DocumentDB) |
+| Learning | Apache Airflow |
+| Others | Java, C, Spring Boot, Redis, FastAPI |
 
 
-## 🔧 주요 기술 스택
+## 인증
 
-#### Languages
-
-![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white) ![SQL](https://img.shields.io/badge/SQL-336791?style=for-the-badge&logo=sqlite&logoColor=white) ![Java](https://img.shields.io/badge/Java-007396?style=for-the-badge&logo=openjdk&logoColor=white) ![C](https://img.shields.io/badge/C-A8B9CC?style=for-the-badge&logo=c&logoColor=white)
-
-#### Data Engineering
-
-![Apache Airflow](https://img.shields.io/badge/Apache_Airflow-017CEE?style=for-the-badge&logo=apacheairflow&logoColor=white)
-
-#### Databases & Caching
-
-![PostgreSQL](https://img.shields.io/badge/PostgreSQL-4169E1?style=for-the-badge&logo=postgresql&logoColor=white) ![Redis](https://img.shields.io/badge/Redis-DC382D?style=for-the-badge&logo=redis&logoColor=white)
-
-#### Data Processing
-
-![Pandas](https://img.shields.io/badge/Pandas-150458?style=for-the-badge&logo=pandas&logoColor=white)
-
-#### DevOps & Cloud
-
-![Docker](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white) ![AWS](https://img.shields.io/badge/AWS-FF9900?style=for-the-badge&logo=amazon-aws&logoColor=white) ![GitHub Actions](https://img.shields.io/badge/GitHub_Actions-2088FF?style=for-the-badge&logo=github-actions&logoColor=white)
-
-#### Testing
-
-![Pytest](https://img.shields.io/badge/Pytest-0A9EDC?style=for-the-badge&logo=pytest&logoColor=white)
-
-#### Backend
-
-![FastAPI](https://img.shields.io/badge/FastAPI-009688?style=for-the-badge&logo=fastapi&logoColor=white) ![Spring Boot](https://img.shields.io/badge/Spring_Boot-6DB33F?style=for-the-badge&logo=spring-boot&logoColor=white)
-
-
-
-## 📚 학습 및 인증
-
-[![Kaggle - Intro to SQL](https://img.shields.io/badge/Kaggle-Intro%20to%20SQL-20BEFF?style=for-the-badge&logo=kaggle&logoColor=white)](https://www.kaggle.com/learn/certification/qaaaq123/intro-to-sql)
-[![Kaggle - Advanced SQL](https://img.shields.io/badge/Kaggle-Advanced%20SQL-20BEFF?style=for-the-badge&logo=kaggle&logoColor=white)](https://www.kaggle.com/learn/certification/qaaaq123/advanced-sql)
+- [Kaggle — Intro to SQL](https://www.kaggle.com/learn/certification/qaaaq123/intro-to-sql)
+- [Kaggle — Advanced SQL](https://www.kaggle.com/learn/certification/qaaaq123/advanced-sql)
