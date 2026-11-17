@@ -5,7 +5,7 @@
 - **ETL 파이프라인:** 수집 → 정제·검증 → 적재 → 자동화
 - **데이터 품질:** 결측·중복 처리 정책을 문서화하고 테스트로 검증
 - **자동화:** 스케줄 기반 배치 실행과 CI로 파이프라인 운영
-
+<br>
 
 ## 💼 오픈소스 기여
 
@@ -30,6 +30,7 @@ Apple의 10-Q 공시에서 `get_operating_cash_flow()`가 운영 현금 흐름�
 - **결과:** 메인테이너가 XBRL Concept 우선 조회와 label 기반 fallback을 적용한 [PR #1089](https://github.com/dgunning/edgartools/pull/1089)을 병합. 운영 현금 흐름 $82.627B와 이에 의존하는 잉여현금흐름 $78.283B가 정상 추출되도록 수정되어 `v5.52.0`에 반영
 
 
+<br>
 
 ## 🚀 주요 프로젝트
 
@@ -57,6 +58,7 @@ SEC 공시의 변화(Δ) 분석 서비스를 목표로, 기업·공시·재무 �
 - **배운 점:** 기업별 비표준 XBRL 태그와 재무제표별 회계 기간 혼재를 다루며 데이터 정합성 검증의 중요성 체감
 - **사용 기술:** `Python`, `edgartools`, `PostgreSQL`, `SQLAlchemy`, `Alembic`, `FastAPI`, `pytest`, `pytest-recording`, `Docker`
 
+<br>
 
 ## 📝 개인 학습 기록 & 기술 지식 저장소
 
@@ -64,6 +66,7 @@ SEC 공시의 변화(Δ) 분석 서비스를 목표로, 기업·공시·재무 �
 
 **Obsidian Notes:** https://obsidian-notes-liart-six.vercel.app/
 
+<br>
 
 ## 🔧 주요 기술 스택
 
@@ -74,6 +77,7 @@ SEC 공시의 변화(Δ) 분석 서비스를 목표로, 기업·공시·재무 �
 | **Learning** | ![Apache Airflow](https://img.shields.io/badge/Apache_Airflow-017CEE?style=flat-square&logo=apacheairflow&logoColor=white) |
 | **Others** | ![Java](https://img.shields.io/badge/Java-007396?style=flat-square&logo=openjdk&logoColor=white) ![C](https://img.shields.io/badge/C-A8B9CC?style=flat-square&logo=c&logoColor=white) ![Spring Boot](https://img.shields.io/badge/Spring_Boot-6DB33F?style=flat-square&logo=springboot&logoColor=white) ![Redis](https://img.shields.io/badge/Redis-DC382D?style=flat-square&logo=redis&logoColor=white) ![FastAPI](https://img.shields.io/badge/FastAPI-009688?style=flat-square&logo=fastapi&logoColor=white) |
 
+<br>
 
 ## 📚 학습 및 인증
 
