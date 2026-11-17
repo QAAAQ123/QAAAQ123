@@ -1,10 +1,10 @@
 ## 안녕하세요 👋
 
-**금융 데이터를 수집·정제·적재하는 파이프라인을 만들고, 데이터가 정확한지 검증하는 데 집중합니다.**
+**데이터를 수집·정제·적재하는 파이프라인을 만들고, 데이터가 정확한지 검증하는 데 집중합니다.**
 
 - **ETL 파이프라인:** 수집 → 정제·검증 → 적재 → 자동화
 - **데이터 품질:** 결측·중복 처리 정책을 문서화하고 테스트로 검증
-- **금융 데이터:** 미국 국채 수익률, SEC 공시 재무 데이터
+- **자동화:** 스케줄 기반 배치 실행과 CI로 파이프라인 운영
 
 
 ## 💼 오픈소스 기여
@@ -35,7 +35,7 @@ Apple의 10-Q 공시에서 `get_operating_cash_flow()`가 운영 현금 흐름�
 
 ### 1. [us-treasury-yield-timeseries-pipeline](https://github.com/QAAAQ123/us-treasury-yield-timeseries-pipeline) — 미국 국채 수익률 시계열 데이터 파이프라인
 
-**Live:** https://qaaaq123.github.io/us-treasury-yield-timeseries-pipeline/
+**시각화 대시보드:** https://qaaaq123.github.io/us-treasury-yield-timeseries-pipeline/
 
 미국 재무부 데이터를 매일 수집해 만기별 수익률과 T10Y2Y·T10Y3M 일드 스프레드 시계열을 적재하고, 시각화 결과를 GitHub Pages에 자동 배포하는 배치 파이프라인입니다.
 
@@ -44,8 +44,7 @@ Apple의 10-Q 공시에서 `get_operating_cash_flow()`가 운영 현금 흐름�
 - **적재:** `date` 기본 키 기반 일드 커브·일드 스프레드 CSV 마트 적재
 - **자동화:** GitHub Actions 매일 수집 → 데이터 변경 시에만 커밋 → GitHub Pages 재배포
 - **테스트:** pytest 단위·통합·E2E 테스트, CI에서 pytest·Ruff 검사
-
-`Python` · `pandas` · `Plotly` · `pytest` · `GitHub Actions`
+- **사용 기술:** `Python`, `pandas`, `requests`, `Plotly`, `pytest`, `Ruff`, `GitHub Actions`, `GitHub Pages`
 
 ### 2. [AlphaDelta](https://github.com/QAAAQ123/AlphaDelta) — SEC 공시 기반 금융 데이터 분석
 
@@ -56,8 +55,7 @@ SEC 공시의 변화(Δ) 분석 서비스를 목표로, 기업·공시·재무 �
 - **모델링:** Company·Filing·Finance 중심 PostgreSQL 스키마 설계, Alembic 마이그레이션 관리
 - **테스트:** VCR 카세트로 실제 SEC 응답을 기록·재생해 Rate Limit 영향 없이 파싱 로직 반복 검증
 - **배운 점:** 기업별 비표준 XBRL 태그와 재무제표별 회계 기간 혼재를 다루며 데이터 정합성 검증의 중요성 체감
-
-`Python` · `PostgreSQL` · `SQLAlchemy` · `Alembic` · `FastAPI` · `pytest` · `Docker`
+- **사용 기술:** `Python`, `edgartools`, `PostgreSQL`, `SQLAlchemy`, `Alembic`, `FastAPI`, `pytest`, `pytest-recording`, `Docker`
 
 
 ## 🔧 주요 기술 스택
