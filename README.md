@@ -58,6 +58,13 @@ SEC 공시의 변화(Δ) 분석 서비스를 목표로, 기업·공시·재무 �
 - **사용 기술:** `Python`, `edgartools`, `PostgreSQL`, `SQLAlchemy`, `Alembic`, `FastAPI`, `pytest`, `pytest-recording`, `Docker`
 
 
+## 📝 개인 학습 기록 & 기술 지식 저장소
+
+개발 과정에서 학습한 기술 지식과 프로젝트 경험, 기술적 의사결정 및 문제 해결 과정을 기록하고 축적하는 개인 기술 지식 베이스입니다.
+
+**Obsidian Notes:** https://obsidian-notes-liart-six.vercel.app/
+
+
 ## 🔧 주요 기술 스택
 
 | Category | Stack |
