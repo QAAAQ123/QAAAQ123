@@ -1,8 +1,10 @@
 ## 안녕하세요 👋
 
-데이터 과학과 데이터 엔지니어링에 관심 있는 개발자입니다.
+**금융 데이터를 수집·정제·적재하는 파이프라인을 만들고, 데이터가 정확한지 검증하는 데 집중합니다.**
 
-**데이터 처리와 ETL 파이프라인 설계**, 특히 금융 데이터의 정확성과 신뢰성을 높이는 데이터 처리에 관심이 있습니다.
+- **ETL 파이프라인:** 수집 → 정제·검증 → 적재 → 자동화
+- **데이터 품질:** 결측·중복 처리 정책을 문서화하고 테스트로 검증
+- **금융 데이터:** 미국 국채 수익률, SEC 공시 재무 데이터
 
 
 ## 💼 오픈소스 기여
@@ -33,54 +35,42 @@ Apple의 10-Q 공시에서 `get_operating_cash_flow()`가 운영 현금 흐름�
 
 ### 1. [us-treasury-yield-timeseries-pipeline](https://github.com/QAAAQ123/us-treasury-yield-timeseries-pipeline) — 미국 국채 수익률 시계열 데이터 파이프라인
 
-미국 국채의 만기별 수익률 시계열을 수집·정제하고, 일드 및 T10Y2Y·T10Y3M 일드 스프레드를 계산·분석하고 시각화하는 데이터 파이프라인입니다.
+**Live:** https://qaaaq123.github.io/us-treasury-yield-timeseries-pipeline/
 
-- **데이터 수집:** 미국 국채 만기별 수익률 데이터 API를 활용한 시계열 데이터 수집 및 저장
-- **데이터 처리:** 만기별 수익률 시계열 정제 및 T10Y2Y·T10Y3M 일드 스프레드 계산과 검증
-- **시각화 및 자동화:** Plotly 기반 만기별 수익률 및 일드 스프레드 시계열 시각화, GitHub Actions를 활용한 파이프라인 정기 실행 및 자동화
+미국 재무부 데이터를 매일 수집해 만기별 수익률과 T10Y2Y·T10Y3M 일드 스프레드 시계열을 적재하고, 시각화 결과를 GitHub Pages에 자동 배포하는 배치 파이프라인입니다.
+
+- **수집:** 미 재무부 국채 금리 XML 수집, 초기 적재와 증분 수집 파이프라인 분리
+- **정제·검증:** 휴장일 결측, 만기별 제공 기간, 날짜 중복·변환 실패 등 데이터 처리 정책을 문서화하고 구현
+- **적재:** `date` 기본 키 기반 일드 커브·일드 스프레드 CSV 마트 적재
+- **자동화:** GitHub Actions 매일 수집 → 데이터 변경 시에만 커밋 → GitHub Pages 재배포
+- **테스트:** pytest 단위·통합·E2E 테스트, CI에서 pytest·Ruff 검사
+
+`Python` · `pandas` · `Plotly` · `pytest` · `GitHub Actions`
 
 ### 2. [AlphaDelta](https://github.com/QAAAQ123/AlphaDelta) — SEC 공시 기반 금융 데이터 분석
 
-SEC 공시 수집과 재무 데이터 처리를 통해 투자 분석에 필요한 데이터를 제공하기 위한 백엔드 프로토타입입니다.
+SEC 공시의 변화(Δ) 분석 서비스를 목표로, 기업·공시·재무 데이터를 수집해 PostgreSQL에 적재하는 데이터 처리 기반을 구축한 프로젝트입니다. (기반 구축 단계에서 중단)
 
-- **데이터 수집:** `edgartools`를 활용한 SEC 기업 정보 및 과거 10-K·10-Q 공시 수집·저장
-- **재무 데이터 처리:** 손익계산서·현금흐름표 데이터 추출 및 FCFE 기반 DCF 분석을 위한 데이터 처리 기반 구축
-- **백엔드 및 테스트:** FastAPI, PostgreSQL, SQLAlchemy, Alembic 기반 백엔드 구조 설계와 pytest 단위·통합 테스트 구성
+- **수집:** `edgartools` 기반 SEC 기업 정보 DB 동기화, 과거 10-K·10-Q 공시 수집·저장
+- **추출:** 손익계산서·현금흐름표 파싱, YTD로 공시되는 현금흐름표를 직전 분기 차감으로 QTD 역산
+- **모델링:** Company·Filing·Finance 중심 PostgreSQL 스키마 설계, Alembic 마이그레이션 관리
+- **테스트:** VCR 카세트로 실제 SEC 응답을 기록·재생해 Rate Limit 영향 없이 파싱 로직 반복 검증
+- **배운 점:** 기업별 비표준 XBRL 태그와 재무제표별 회계 기간 혼재를 다루며 데이터 정합성 검증의 중요성 체감
+
+`Python` · `PostgreSQL` · `SQLAlchemy` · `Alembic` · `FastAPI` · `pytest` · `Docker`
 
 
 ## 🔧 주요 기술 스택
 
-#### Languages
-
-![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white) ![SQL](https://img.shields.io/badge/SQL-336791?style=for-the-badge&logo=sqlite&logoColor=white) ![Java](https://img.shields.io/badge/Java-007396?style=for-the-badge&logo=openjdk&logoColor=white) ![C](https://img.shields.io/badge/C-A8B9CC?style=for-the-badge&logo=c&logoColor=white)
-
-#### Data Engineering
-
-![Apache Airflow](https://img.shields.io/badge/Apache_Airflow-017CEE?style=for-the-badge&logo=apacheairflow&logoColor=white)
-
-#### Databases & Caching
-
-![PostgreSQL](https://img.shields.io/badge/PostgreSQL-4169E1?style=for-the-badge&logo=postgresql&logoColor=white) ![Redis](https://img.shields.io/badge/Redis-DC382D?style=for-the-badge&logo=redis&logoColor=white)
-
-#### Data Processing
-
-![Pandas](https://img.shields.io/badge/Pandas-150458?style=for-the-badge&logo=pandas&logoColor=white)
-
-#### DevOps & Cloud
-
-![Docker](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white) ![AWS](https://img.shields.io/badge/AWS-FF9900?style=for-the-badge&logo=amazon-aws&logoColor=white) ![GitHub Actions](https://img.shields.io/badge/GitHub_Actions-2088FF?style=for-the-badge&logo=github-actions&logoColor=white)
-
-#### Testing
-
-![Pytest](https://img.shields.io/badge/Pytest-0A9EDC?style=for-the-badge&logo=pytest&logoColor=white)
-
-#### Backend
-
-![FastAPI](https://img.shields.io/badge/FastAPI-009688?style=for-the-badge&logo=fastapi&logoColor=white) ![Spring Boot](https://img.shields.io/badge/Spring_Boot-6DB33F?style=for-the-badge&logo=spring-boot&logoColor=white)
-
+| Category | Stack |
+|---|---|
+| **Data Engineering** | ![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white) ![SQL](https://img.shields.io/badge/SQL-336791?style=flat-square&logo=postgresql&logoColor=white) ![Pandas](https://img.shields.io/badge/Pandas-150458?style=flat-square&logo=pandas&logoColor=white) ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-4169E1?style=flat-square&logo=postgresql&logoColor=white) ![GitHub Actions](https://img.shields.io/badge/GitHub_Actions-2088FF?style=flat-square&logo=githubactions&logoColor=white) ![Docker](https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=docker&logoColor=white) ![Pytest](https://img.shields.io/badge/Pytest-0A9EDC?style=flat-square&logo=pytest&logoColor=white) |
+| **Cloud** | ![AWS EC2](https://img.shields.io/badge/AWS_EC2-FF9900?style=flat-square) ![AWS S3](https://img.shields.io/badge/AWS_S3-569A31?style=flat-square) ![Amazon DocumentDB](https://img.shields.io/badge/Amazon_DocumentDB-C925D1?style=flat-square) |
+| **Learning** | ![Apache Airflow](https://img.shields.io/badge/Apache_Airflow-017CEE?style=flat-square&logo=apacheairflow&logoColor=white) |
+| **Others** | ![Java](https://img.shields.io/badge/Java-007396?style=flat-square&logo=openjdk&logoColor=white) ![C](https://img.shields.io/badge/C-A8B9CC?style=flat-square&logo=c&logoColor=white) ![Spring Boot](https://img.shields.io/badge/Spring_Boot-6DB33F?style=flat-square&logo=springboot&logoColor=white) ![Redis](https://img.shields.io/badge/Redis-DC382D?style=flat-square&logo=redis&logoColor=white) ![FastAPI](https://img.shields.io/badge/FastAPI-009688?style=flat-square&logo=fastapi&logoColor=white) |
 
 
 ## 📚 학습 및 인증
 
-[![Kaggle - Intro to SQL](https://img.shields.io/badge/Kaggle-Intro%20to%20SQL-20BEFF?style=for-the-badge&logo=kaggle&logoColor=white)](https://www.kaggle.com/learn/certification/qaaaq123/intro-to-sql)
-[![Kaggle - Advanced SQL](https://img.shields.io/badge/Kaggle-Advanced%20SQL-20BEFF?style=for-the-badge&logo=kaggle&logoColor=white)](https://www.kaggle.com/learn/certification/qaaaq123/advanced-sql)
+[![Kaggle - Intro to SQL](https://img.shields.io/badge/Kaggle-Intro%20to%20SQL-20BEFF?style=flat-square&logo=kaggle&logoColor=white)](https://www.kaggle.com/learn/certification/qaaaq123/intro-to-sql)
+[![Kaggle - Advanced SQL](https://img.shields.io/badge/Kaggle-Advanced%20SQL-20BEFF?style=flat-square&logo=kaggle&logoColor=white)](https://www.kaggle.com/learn/certification/qaaaq123/advanced-sql)
