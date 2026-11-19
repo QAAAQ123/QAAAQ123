@@ -79,6 +79,16 @@ SEC 공시의 변화(Δ) 분석 서비스를 목표로, 기업·공시·재무 �
 
 <br>
 
+## 🌱 학습 중
+
+현재 아래 주제를 학습하고 있습니다.
+
+- **데이터 모델링:** 차원 모델링, 스타 스키마, Grain, SCD, OLTP, 정규화·비정규화
+- **RDBMS 내부 동작 원리:** MVCC, 트랜잭션 격리 수준, B-Tree 인덱스, 실행 계획, WAL
+- **Claude Code 사용법:** `CLAUDE.md`, Skills, Hooks, Custom Agents
+
+<br>
+
 ## 📚 학습 및 인증
 
 [![Kaggle - Intro to SQL](https://img.shields.io/badge/Kaggle-Intro%20to%20SQL-20BEFF?style=flat-square&logo=kaggle&logoColor=white)](https://www.kaggle.com/learn/certification/qaaaq123/intro-to-sql)
