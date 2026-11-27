@@ -76,11 +76,19 @@ SEC 공시의 변화(Δ) 분석 서비스를 목표로, 기업·공시·재무 �
 현재 아래 주제를 학습하고 있습니다.
 
 - **RDBMS 내부 동작 원리:** MVCC, 트랜잭션 격리 수준, B-Tree 인덱스, 실행 계획, WAL
-- **Claude Code 사용법:** `CLAUDE.md`, Skills, Hooks, Custom Agents
+- **Claude Code 사용법:** `CLAUDE.md`, Skills, Hooks, Tools 등
 
 <br>
 
-## 📚 학습 및 인증
+## 👨‍🏫 자격증
+
+| 취득일 | 자격 | 발행처 |
+|---|---|---|
+| 제63회 | SQLD (SQL 개발자) | 한국데이터산업진흥원 |
+
+<br>
+
+## 🎖 수료증
 
 [![Kaggle - Intro to SQL](https://img.shields.io/badge/Kaggle-Intro%20to%20SQL-20BEFF?style=flat-square&logo=kaggle&logoColor=white)](https://www.kaggle.com/learn/certification/qaaaq123/intro-to-sql)
 [![Kaggle - Advanced SQL](https://img.shields.io/badge/Kaggle-Advanced%20SQL-20BEFF?style=flat-square&logo=kaggle&logoColor=white)](https://www.kaggle.com/learn/certification/qaaaq123/advanced-sql)
