@@ -1,4 +1,4 @@
-## 안녕하세요 👋
+## 안녕하세요 <img src="https://github.githubassets.com/images/icons/emoji/unicode/1f44b.png" width="24" height="24" alt="👋">
 
 **데이터를 수집·정제·적재하는 파이프라인을 만들고, 데이터가 정확한지 검증하는 데 집중합니다.**
 
@@ -7,7 +7,7 @@
 - **자동화:** 스케줄 기반 배치 실행과 CI로 파이프라인 운영
 <br>
 
-## 💼 오픈소스 기여
+## <img src="https://github.githubassets.com/images/icons/emoji/unicode/1f4bc.png" width="24" height="24" alt="💼"> 오픈소스 기여
 
 ### 1. 매출 데이터 기간 선택 오류 분석 및 제보
 
@@ -32,7 +32,7 @@ Apple의 10-Q 공시에서 `get_operating_cash_flow()`가 운영 현금 흐름�
 
 <br>
 
-## 🚀 주요 프로젝트
+## <img src="https://github.githubassets.com/images/icons/emoji/unicode/1f680.png" width="24" height="24" alt="🚀"> 주요 프로젝트
 
 ### 1. [us-treasury-yield-timeseries-pipeline](https://github.com/QAAAQ123/us-treasury-yield-timeseries-pipeline) — 미국 국채 수익률 시계열 데이터 파이프라인
 
@@ -60,7 +60,7 @@ SEC 공시의 변화(Δ) 분석 서비스를 목표로, 기업·공시·재무 �
 
 <br>
 
-## 🔧 주요 기술 스택
+## <img src="https://github.githubassets.com/images/icons/emoji/unicode/1f527.png" width="24" height="24" alt="🔧"> 주요 기술 스택
 
 | Category | Stack |
 |---|---|
@@ -71,7 +71,7 @@ SEC 공시의 변화(Δ) 분석 서비스를 목표로, 기업·공시·재무 �
 
 <br>
 
-## 🌱 학습 중
+## <img src="https://github.githubassets.com/images/icons/emoji/unicode/1f331.png" width="24" height="24" alt="🌱"> 학습 중
 
 현재 아래 주제를 학습하고 있습니다.
 
@@ -80,7 +80,7 @@ SEC 공시의 변화(Δ) 분석 서비스를 목표로, 기업·공시·재무 �
 
 <br>
 
-## 👨‍🏫 자격증
+## <img src="https://github.githubassets.com/images/icons/emoji/unicode/1f468-1f3eb.png" width="24" height="24" alt="👨‍🏫"> 자격증
 
 | 취득일 | 자격 | 발행처 |
 |---|---|---|
@@ -88,7 +88,7 @@ SEC 공시의 변화(Δ) 분석 서비스를 목표로, 기업·공시·재무 �
 
 <br>
 
-## 🎖 수료증
+## <img src="https://github.githubassets.com/images/icons/emoji/unicode/1f396.png" width="24" height="24" alt="🎖️"> 수료증
 
 [![Kaggle - Intro to SQL](https://img.shields.io/badge/Kaggle-Intro%20to%20SQL-20BEFF?style=flat-square&logo=kaggle&logoColor=white)](https://www.kaggle.com/learn/certification/qaaaq123/intro-to-sql)
 [![Kaggle - Advanced SQL](https://img.shields.io/badge/Kaggle-Advanced%20SQL-20BEFF?style=flat-square&logo=kaggle&logoColor=white)](https://www.kaggle.com/learn/certification/qaaaq123/advanced-sql)
